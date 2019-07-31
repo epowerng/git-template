@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+import os
+
+
+def main():
+    pattern = r'^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|update)(\(.+\))?: .{1,70}|Initial commit)'
+    commit_msg_file = sys.argv[1]
+    commit_msg_text = open(commit_msg_file, 'r').read()
+    if re.match(pattern, commit_msg_text, flags=re.I) == None:
+        print('COMMIT ERROR: Commit message does not follow style convention!')
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()
