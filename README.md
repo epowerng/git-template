@@ -13,11 +13,11 @@ To use this, first run this command to clone this repo to your home directory:
 ```sh
  # We assumed you are using Linux or MacOS, if you are using Windows replace the "~" symbol with "%HOMEPATH%"
 
-  git clone https://github.com/Epowerng/.git-template ~/.git-template
+  git clone https://github.com/epowerng/.git-template ~/.git-template
 
   # Or if you prefer using SSH protocol
 
-  git clone git@github.com:Epowerng/.git-template.git ~/.git-template
+  git clone git@github.com:epowerng/.git-template.git ~/.git-template
 ```
 
 Set the newly cloned repo as your git template directory. This will tell git to populate new repositories created with either `git clone` or `git init` with the content of this directory.
@@ -33,7 +33,7 @@ And you are done, read the style guide below to know the rules.
 All your commit message must match below Regular Expression to be considered valid.
 
 ```js
-  /^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|update)(\(.+\))?: .{1,70}|Initial commit)/
+  /^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)(\(.+\))?: .{1,50}|Initial commit)/
 ```
 
 Continue reading to get the full explanation.
@@ -67,7 +67,6 @@ Must be one of the following:
 - test: Adding missing tests or correcting existing tests
 - revert: commit that reverts a previous commit
 - chore: updating build tasks, package manager configs, etc; no production code change
-- update: verbose alias of `feat`
 
 ## Reverting Commit
 
