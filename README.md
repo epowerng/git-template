@@ -58,17 +58,17 @@ The **header** is mandatory and the **scope** of the header is optional.
 
 Must be one of the following:
 
-- build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-- ci: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
-- docs: Documentation only changes
-- feat: A new feature
-- fix: A bug fix
-- perf: A code change that improves performance
-- refactor: A code change that neither fixes a bug nor adds a feature; refactoring production code
-- style: Changes that do not affect the meaning of the code (white-space, formatting, removing extra semi-colons, etc)
-- test: Adding missing tests or correcting existing tests
-- revert: commit that reverts a previous commit
-- chore: updating build tasks, package manager configs, etc; no production code change
+- `build`: Changes that affect the build system or external dependencies or version changes (example scopes: gulp, broccoli, npm)
+- `ci`: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
+- `docs`: Documentation only changes
+- `feat`: A new feature
+- `fix`: A bug fix
+- `perf`: A code change that improves performance
+- `refactor`: A code change that neither fixes a bug nor adds a feature; refactoring production code
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, removing extra semi-colons, etc)
+- `test`: Adding missing tests or correcting existing tests
+- `revert`: commit that reverts a previous commit
+- `chore`: updating build tasks, package manager configs, etc; no production code change
 
 ## Reverting Commit
 
