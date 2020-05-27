@@ -6,7 +6,7 @@ import os
 
 
 def main():
-    pattern = r'^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|update)(\(.+\))?: .{1,70}|Initial commit)'
+    pattern = r'^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)(\(.+\))?: .{1,50}|Initial commit)'
     commit_msg_file = sys.argv[1]
     commit_msg_text = open(commit_msg_file, 'r').read()
     if re.match(pattern, commit_msg_text, flags=re.I) == None:
