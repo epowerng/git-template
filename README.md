@@ -26,7 +26,9 @@ Set the newly cloned repo as your git template directory. This will tell git to 
   git config --global init.templatedir '~/.git-template'
 ```
 
-And you are done, read the style guide below to know the rules.
+And also you need to have [Python 3](https://python.org) installed and in your PATH environment variable.
+
+Once you have satisfied all these prerequisities, read the style guide below to know the rules.
 
 ## Regular Expressions
 
