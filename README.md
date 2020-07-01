@@ -70,10 +70,6 @@ Must be one of the following:
 - `revert`: commit that reverts a previous commit
 - `chore`: updating build tasks, package manager configs, etc; no production code change
 
-## Reverting Commit
-
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
-
 ## Commit Scope
 
 The scope could be anything specifying place of the commit change e.g a file name, function name, class name, component name etc.
@@ -86,6 +82,14 @@ The subject contains succinct description of the change:
 - don't capitalize first letter
 - no dot (.) at the end
 
+So the subject should be written as if you are completing the below sentence:
+
+> If this commit were applied, it would...
+
+e.g `add a name field to the checkout form` will now read as `If this commit were applied, it would add a name field to the checkout form`.
+
+Nice and clear!
+
 ## Commit Body
 
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
@@ -97,6 +101,10 @@ The footer should contain any information about **Breaking Changes** and is also
 reference GitHub issues that this commit **Closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+
+## Reverting Commit
+
+If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
 ## Commit Examples
 
