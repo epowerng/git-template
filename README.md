@@ -1,23 +1,21 @@
 # Epower Git Template
 
-Git directory template with commit style validator that we are using at Epower.ng.
-
-This style guide is adapted from Angular commit style in combination with our own additions.
+Git directory template which includes commit style validator, preventing commits and pushing directly to master without a pull request that we are using at Epower.ng.
 
 ## Usage
 
-Git Template is a replacement for the default directory that gets copied each time you create or clone a git repository. That's right, every time you create or clone a git repository, the commit style validator file will get copied in your .git directory.
+Git Template is a replacement for the default directory that gets copied each time you create or clone a git repository.
 
 To use this, first run this command to clone this repo to your home directory:
 
 ```sh
- # We assumed you are using Linux or MacOS, if you are using Windows replace the "~" symbol with "%HOMEPATH%"
+  # Windows users should use Git Bash terminal for consistency.
 
-  git clone https://github.com/epowerng/.git-template ~/.git-template
+  git clone https://github.com/epowerng/git-template ~/.git-template
 
-  # Or if you prefer using SSH protocol
+  # Or if you prefer using SSH protocol:
 
-  git clone git@github.com:epowerng/.git-template.git ~/.git-template
+  git clone git@github.com:epowerng/git-template.git ~/.git-template
 ```
 
 Set the newly cloned repo as your git template directory. This will tell git to populate new repositories created with either `git clone` or `git init` with the content of this directory.
@@ -26,21 +24,7 @@ Set the newly cloned repo as your git template directory. This will tell git to 
   git config --global init.templatedir '~/.git-template'
 ```
 
-And also you need to have [Python 3](https://python.org) installed and in your PATH environment variable.
-
-Once you have satisfied all these prerequisities, read the style guide below to know the rules.
-
-## Regular Expressions
-
-All your commit message must match below Regular Expression to be considered valid.
-
-```js
-  /^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)(\(.+\))?: .{1,50}|Initial commit)/
-```
-
-Continue reading to get the full explanation.
-
-## Full Message Format
+## Commit Message Format
 
 A commit message consists of a **header**, **body** and **footer**.  The header has a **type**, **scope** and **subject**:
 
@@ -52,9 +36,9 @@ A commit message consists of a **header**, **body** and **footer**.  The header 
   <footer>
 ```
 
-The **header** is mandatory and the **scope** of the header is optional.
+The **header** is mandatory but the **scope** of the header is optional which means **type** and **subject** are required.
 
-## Commit Type
+### Commit Type
 
 Must be one of the following:
 
@@ -67,14 +51,14 @@ Must be one of the following:
 - `refactor`: A code change that neither fixes a bug nor adds a feature; refactoring production code
 - `style`: Changes that do not affect the meaning of the code (white-space, formatting, removing extra semi-colons, etc)
 - `test`: Adding missing tests or correcting existing tests
-- `revert`: commit that reverts a previous commit
 - `chore`: updating build tasks, package manager configs, etc; no production code change
+- `revert`: commit that reverts a previous commit, read more [here](#reverting-commit)
 
-## Commit Scope
+### Commit Scope
 
 The scope could be anything specifying place of the commit change e.g a file name, function name, class name, component name etc.
 
-## Commit Subject
+### Commit Subject
 
 The subject contains succinct description of the change:
 
@@ -90,23 +74,23 @@ e.g `add a name field to the checkout form` will now read as `If this commit wer
 
 Nice and clear!
 
-## Commit Body
+### Commit Body
 
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
 The body should include the motivation for the change and contrast this with previous behavior.
 
-## Commit Footer
+### Commit Footer
 
 The footer should contain any information about **Breaking Changes** and is also the place to
 reference GitHub issues that this commit **Closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
-## Reverting Commit
+### Reverting Commit
 
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
-## Commit Examples
+### Commit Examples
 
 Appears under "Features" header, `Post.js` files:
 
