@@ -6,11 +6,11 @@ Git directory template which includes commit style validator, preventing commits
 
 Git Template is a replacement for the default directory that gets copied each time you create or clone a git repository.
 
+Windows users should use Git Bash terminal for consistency.
+
 To use this, first run this command to clone this repo to your home directory:
 
 ```sh
-  # Windows users should use Git Bash terminal for consistency.
-
   git clone https://github.com/epowerng/git-template ~/.git-template
 
   # Or if you prefer using SSH protocol:
