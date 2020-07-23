@@ -1,18 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env bash
 
-import re
-import sys
-import os
+commit_message=$(cat "$1")
+commit_style='^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore)(\(.+\))?: .{5,50}|Initial commit)'
 
-
-def main():
-    pattern = r'^(revert: )?((build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)(\(.+\))?: .{1,50}|Initial commit)'
-    commit_msg_file = sys.argv[1]
-    commit_msg_text = open(commit_msg_file, 'r').read()
-    if re.match(pattern, commit_msg_text, flags=re.I) == None:
-        print('COMMIT ERROR: Commit message does not follow style convention!')
-        sys.exit(1)
-
-
-if __name__ == '__main__':
-    main()
+[[ "$commit_message" =~ $commit_style ]] || {
+  echo 'Commit message does not follow the style convention!'
+  exit 1
+}
