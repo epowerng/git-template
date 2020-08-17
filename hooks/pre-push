@@ -4,9 +4,7 @@
 git pull
 
 # Restrict pushing to master branch
-branch="$(git rev-parse --abbrev-ref HEAD)"
-
-if [ "$branch" = "master" ]; then
+if [ "$(git rev-parse --abbrev-ref HEAD)" = "master" ]; then
   echo 'Pushing directly to "master" branch is not allowed.'
   exit 1
 fi
