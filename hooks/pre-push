@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Enforce pull before pushing
+git pull
+
+# Restrict pushing to master branch
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ "$branch" = "master" ]; then
