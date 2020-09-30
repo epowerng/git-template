@@ -46,6 +46,7 @@ Must be one of the following:
 - `ci`: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
 - `docs`: Documentation only changes
 - `feat`: A new feature
+- `bug`: A code change that seems to bring about a bug
 - `fix`: A bug fix
 - `perf`: A code change that improves performance
 - `refactor`: A code change that neither fixes a bug nor adds a feature; refactoring production code
